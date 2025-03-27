@@ -1,0 +1,5 @@
+ulimit -n 4096
+
+python ./D-FINE/train.py -c ./D-FINE/configs/dfine/custom/dfine_hgnetv2_n_custom.yml --seed=0 -t ./D-FINE/models/dfine_n_coco.pth -d cuda
+
+CUDA_VISIBLE_DEVICES=0 torchrun --master_port=7777 --nproc_per_node=8 
